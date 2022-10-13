@@ -10,7 +10,7 @@ ADD keterangan VARCHAR(20);
 
 INSERT INTO mahasiswa (id_mahasiswa, nama, nim, jk, No_telp, Alamat, Email, Keterangan)
 VALUE 
-(1, 'Syifa Ur Rahmi', 'H071211066', 'P', '082350687677', 'Ramsis Unit 2', 'sifasisi3@gmail.com', '3'), 
+(1, 'Syifa Ur Rahmi', 'H071211066', 'P', '082350787677', 'Ramsis Unit 2', 'sifasisi34@gmail.com', '3'), 
 (2, 'Agung Kartika Ardhiyanda', 'H071211046', 'L', '085276890243', 'Gowa', 'ardhiy@gmail.com', '3'),
 (3, 'Muhammad Dzacky Ilham', 'H071211071', 'L', '085255467589', 'BTP', 'zdckyy@gmail.com', '3'),
 (4, 'Muh. Khalilur Rachman G', 'H071211082', 'L', '082351067899', 'Jl. Sahabat 2', 'khalil@gmail.com', '3'),
