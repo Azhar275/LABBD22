@@ -1,0 +1,58 @@
+-- Nomor 1
+-- SELECT customers.customerName AS 'nama pelanggan', SUM(amount) AS 'total belanja', customers.creditLimit AS 'batas kredit', (SUM(amount)-creditLimit) as 'selisih'
+-- FROM customers
+-- INNER JOIN payments
+-- ON customers.customerNumber = payments.customerNumber
+-- GROUP BY customerName
+-- HAVING SUM(amount) > customers.creditLimit ORDER BY (SUM(amount)-creditLimit)  
+-- DESC LIMIT 5;
+                
+-- nomor 2
+-- SELECT CONCAT(c.customerName, ' : ', c.contactFirstName, ' ', c.contactLastName, '@', c.addressLine1) AS pelanggan, 
+-- SUM(od.quantityOrdered) AS 'jumlah orderan'
+-- FROM customers AS c
+-- INNER JOIN orders AS o
+-- ON c.customerNumber = o.customerNumber
+-- INNER JOIN orderdetails AS od
+-- ON o.orderNumber = od.orderNumber
+-- GROUP BY c.customerName
+-- ORDER BY SUM(od.quantityOrdered) DESC LIMIT 1;
+
+-- nomor 3
+-- SELECT CONCAT((MONTHNAME(paymentDate)), " ",YEAR(paymentDate)) as 'hari pembayaran', COUNT(customers.customerName) as 'jumlah pelanggan', 
+-- GROUP_CONCAT(customerName ORDER BY customerName ASC) as 'list pelanggan', SUM(payments.amount) as 'jumlah pembayaran'
+-- FROM customers
+-- INNER JOIN payments 
+-- ON customers.customerNumber = payments.customerNumber
+-- WHERE MONTH(paymentdate) = 2
+-- GROUP BY YEAR(paymentDate) ORDER BY SUM(payments.amount)DESC;
+
+-- nomor 4
+-- select upper(p.productName) as 'nama produk' , COUNT(o.orderNumber) AS 'jumlah diorder', 
+-- group_concat(orderDate) as 'waktu orderan', p.buyPrice as 'harga beli', od.priceEach as 'harga jual', 
+-- SUM(od.quantityOrdered) AS 'Total jumlah orderan',
+-- concat(sum(od.quantityOrdered*od.priceEach), "-", sum(od.quantityOrdered*p.buyprice), "=", (sum(od.quantityOrdered*od.priceEach) - sum(od.quantityOrdered*p.buyprice)))
+-- AS "pendapatan - modal = keuntungan"
+-- from products as p
+-- inner join orderdetails as od
+-- on p.productCode = od.productCode
+-- inner join orders as o
+-- on od.orderNumber = o.orderNumber
+-- where p.productName =  '2001 Ferrari Enzo'
+-- group by priceEach
+-- having (SUM(od.quantityOrdered * od.priceEach)) - sum(od.quantityOrdered * p.buyprice) > 5000 
+-- order by (SUM(od.quantityOrdered * od.priceEach)) - sum(od.quantityOrdered * p.buyprice)desc;
+
+-- nomor 5
+-- SELECT o.addressLine1 AS 'Alamat', CONCAT(LEFT(o.phone, LENGTH(o.phone)-6), '* ****'),
+-- COUNT(DISTINCT e.employeeNumber) AS 'jumlah karyawan' , COUNT(DISTINCT c.customerName), ROUND(AVG(amount), 2)
+-- FROM offices AS o
+-- INNER JOIN employees AS e
+-- ON e.officeCode = o.officeCode
+-- INNER JOIN customers AS c
+-- ON c.salesRepEmployeeNumber = e.employeeNumber
+-- INNER JOIN payments AS p
+-- ON c.customerNumber = p.customerNumber
+-- GROUP BY o.officeCode
+-- ORDER BY CONCAT(LEFT(o.phone, LENGTH(o.phone)-6), '* ****') ASC;
+
