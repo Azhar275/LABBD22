@@ -1,7 +1,6 @@
 USE appseminar;
-
 #No 1
-SELECT ssd.nama 'Nama',nip 'NIP/NIM',ssp.nama
+SELECT ssd.nama 'Nama',nip 'NIP/NIM',ssp.nama 'Prodi'
 FROM ss_dosen ssd
 JOIN ss_prodi ssp ON ssp.id_prodi = ssd.id_prodi
 WHERE ssd.id_prodi = 'H07'
@@ -51,7 +50,7 @@ SELECT city FROM (SELECT c.customerName,c.city
 FROM customers c
 WHERE c.customerName LIKE 'L%'
 UNION ALL
-SELECT CONCAT(emp.firstName,' ',emp.lastName) 'Nama',o.city
+SELECT CONCAT(emp.firstName,' ',emp.lastName),o.city
 FROM employees emp
 INNER JOIN offices o ON o.officeCode = emp.officeCode
 WHERE emp.firstName LIKE 'L%') AS IDK
