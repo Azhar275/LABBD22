@@ -1,0 +1,39 @@
+-- CREATE DATABASE db_praktikum;
+-- CREATE TABLE buku (
+-- judul VARCHAR (255),
+-- tahunterbit INT,
+-- pengarang VARCHAR (255),
+-- id_buku INT AUTO_INCREMENT,
+-- PRIMARY KEY (id_buku));
+-- 
+-- CREATE TABLE mahasiswa(
+-- nama VARCHAR (255),
+-- nim VARCHAR (10),
+-- jk CHAR (1),
+-- id_mahasiswa BIGINT UNSIGNED AUTO_INCREMENT,
+-- PRIMARY KEY (id_mahasiswa));
+-- 
+-- CREATE TABLE pinjam(
+-- tgl_pinjam DATETIME,
+-- id_mahasiswa BIGINT UNSIGNED,
+-- id_buku INT AUTO_INCREMENT,
+-- status_pengembalian TINYINT (1),
+-- id_pinjam INT UNSIGNED,
+-- PRIMARY KEY (id_pinjam),
+-- FOREIGN KEY (id_mahasiswa) REFERENCES mahasiswa (id_mahasiswa),
+-- FOREIGN KEY (id_buku) REFERENCES buku (id_buku)
+-- )
+-- DESCRIBE buku
+-- ALTER TABLE mahasiswa
+-- MODIFY nim VARCHAR (10) NOT NULL
+-- DESCRIBE mahasiswa
+-- ALTER TABLE mahasiswa 
+-- ADD UNIQUE (nim)
+-- DESCRIBE mahasiswa
+-- ALTER TABLE buku
+-- MODIFY 'tahun terbit' INT
+-- ALTER TABLE buku
+-- MODIFY `tahun terbit` INT
+DESCRIBE pinjam 
+
+

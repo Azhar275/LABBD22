@@ -1,0 +1,88 @@
+-- CREATE DATABASE db_praktikum;
+-- CREATE TABLE buku (
+-- judul VARCHAR (255),
+-- tahunterbit INT,
+-- pengarang VARCHAR (255),
+-- id_buku INT AUTO_INCREMENT,
+-- PRIMARY KEY (id_buku));
+-- 
+-- CREATE TABLE mahasiswa(
+-- nama VARCHAR (255),
+-- nim VARCHAR (10),
+-- jk CHAR (1),
+-- id_mahasiswa BIGINT UNSIGNED AUTO_INCREMENT,
+-- PRIMARY KEY (id_mahasiswa));
+-- 
+-- CREATE TABLE pinjam(
+-- tgl_pinjam DATETIME,
+-- id_mahasiswa BIGINT UNSIGNED,
+-- id_buku INT AUTO_INCREMENT,
+-- status_pengembalian TINYINT (1),
+-- id_pinjam INT UNSIGNED,
+-- PRIMARY KEY (id_pinjam),
+-- FOREIGN KEY (id_mahasiswa) REFERENCES mahasiswa (id_mahasiswa),
+-- FOREIGN KEY (id_buku) REFERENCES buku (id_buku)
+-- )
+-- DESCRIBE buku
+-- ALTER TABLE mahasiswa
+-- MODIFY nim VARCHAR (10) NOT NULL
+-- DESCRIBE mahasiswa
+-- ALTER TABLE mahasiswa 
+-- ADD UNIQUE (nim)
+-- DESCRIBE mahasiswa
+-- ALTER TABLE buku
+-- MODIFY 'tahun terbit' INT
+-- ALTER TABLE buku
+-- MODIFY `tahun terbit` INT
+-- DESCRIBE pinjam 
+
+-- USE db_praktikum;
+-- ALTER TABLE mahasiswa
+-- ADD No_Telp VARCHAR (20) NOT NULL,
+-- ADD Alamat VARCHAR (100),
+-- ADD Email VARCHAR (50) NOT NULL,
+-- ADD Keterangan VARCHAR (20);
+-- DESC mahasiswa;
+
+-- soal NO 3
+-- INSERT INTO mahasiswa (nama, nim, jk, No_Telp, Alamat, Email, Keterangan)
+-- VALUE ("Fadilah Istiqamah", "H071211023", "P", "085242345230", "Jl. Perintis Kemerdekaan VI", "fadilahistiqomah0206@gmail.com", "semester 3");
+-- SELECT * FROM mahasiswa
+-- INSERT INTO mahasiswa VALUE ("Selviani Amalia Kartika", "H071211003", "P", "294", "085509004312", "Jl. Andi Tonro IV", "selvianiamalia003@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Adelia Puspita Hilal", "H071211044", "P", "295", "082391923614", "BTP Jl. Kesenangan 3", "adeliahilal044@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Muhammad Ikram Hidayat", "H071211030", "L", "296", "089208234630", "Perintis Kemerdekaan Km 17", "ikramhidayat30@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Agung Kartika Ardhiyanda", "H071211064", "L", "297", "081563210517", "Rappocini Raya", "ardhiyanda64@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Syifa Ur Rahmi", "H071211066", "P", "298", "082386507767", "Jl. Pintu 2 Unhas", "syifaurrahmi66@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Muhammad Dzacky Ilham", "H071211071", "L", "299", "085743256536", "Perintis Kemerdekaan 17", "dzackyilham071@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Djulizah Bonita Lanini", "H071211073", "P", "300", "081453435497", "Jl. Tamalanrea Selatan 5", "djulizahlanini73@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Muhammad Rifky Aqid", "H071211077", "L", "301", "081343955302", "Jl. Tamalanrea Raya", "rifkyaqid077@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Muh. Fajar Siddiq Arafat", "H071211078", "L", "302", "081243486102", "Jl. Baji Gau IV", "fajarsiddiqd078@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Muh. Khalilur Rachman G", "H071211082", "L", "303", "082270147107", "Jl. Sanrangan", "khalilurrahman82@gmail.com", "semester 3");
+-- INSERT INTO mahasiswa VALUE ("Syarif hidayat", "H071211087", "L", "304", "081355161768", "Jl. Syekh Yusuf", "Syarif087@gmail.com", "semester 3");
+-- SELECT * FROM mahasiswa
+
+-- soal no 4 tambah 5 data pada tabel buku
+-- INSERT INTO buku VALUE ("Ingatkan Aku", "2020", "Fitria Na", "602");
+-- INSERT INTO buku VALUE ("Teman Berjuang", "2019", "Indra Sugiarto", "540");
+-- INSERT INTO buku VALUE ("Filosofi Teras", "2021", "Henry Manampiring", "346");
+-- INSERT INTO buku VALUE ("What's So Wrong About Your Self Healing", "2021", "Ardhi Mohamad", "623");
+-- INSERT INTO buku VALUE ("Maaf Tuhan Aku Hampir Menyerah", "2020", "Alfialghazi", "674");
+-- SELECT * FROM buku
+
+-- soal no 4 tambah data pada tabel pinjam 
+-- INSERT INTO pinjam VALUE ("2022-09-28 09:04:44", 293, 623, "1", "101");
+-- INSERT INTO pinjam VALUE ("2022-10-03 10:51:01", 300, 540, " ", "105");
+-- INSERT INTO pinjam VALUE ("2022-09-30 11:30:43", 295, 674, "1", "103");
+-- INSERT INTO pinjam VALUE ("2022-10-03 13:10:23", 302, 346, " ", "106");
+-- INSERT INTO pinjam VALUE ("2022-09-29 15:03:56", 304, 540, "1", "102");
+-- SELECT * FROM pinjam
+
+-- soal no 5 data blank
+-- INSERT INTO mahasiswa (nama, nim, jk, No_Telp, Alamat, Keterangan)
+-- VALUE ("Fadilah", "H071211028", "P", "085224350230", "Jl. Perintis Kemerdekaan V", "semester 3");
+-- SELECT * FROM mahasiswa
+
+-- soal no 5 nilai null
+-- INSERT INTO mahasiswa (nama, nim, jk, No_Telp, Email, Keterangan)
+-- VALUE ("Istiqamah", "H071211022", "P", "085242345230", "istiqamah022@gmail.com", "semester 3");
+-- SELECT * FROM mahasiswa
